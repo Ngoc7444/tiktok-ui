@@ -142,7 +142,7 @@ function Header() {
           >
             {currentUser ? (
               <Image
-                src="https://fullstacke.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                 className={cx("user-avatar")}
                 alt="Nguyen Dinh Ngoc"
               />
