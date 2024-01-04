@@ -8,6 +8,8 @@ import Image from "@/components/Image";
 
 import "tippy.js/dist/tippy.css";
 
+import config from "@/config";
+
 import Tippy from "@tippyjs/react";
 
 import Button from "@/components/Button";
@@ -17,6 +19,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 import Menu from "@/components/Popper/Menu";
+
+import Search from "../Seacch";
+
+import { Link } from "react-router-dom";
 
 import {
   CoinIcon,
@@ -30,8 +36,6 @@ import {
   ShortcutsIcon,
   UploadIcon,
 } from "@/components/Icons";
-
-import Search from "../Seacch";
 
 const cx = classNames.bind(styles);
 
@@ -106,7 +110,9 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <img src={images.logo} alt="TikTok" />
+          <Link to={config.routes.home} className={cx("logo-link")}>
+            <img src={images.logo} alt="TikTok" />
+          </Link>
         </div>
         <Search />
 
@@ -126,6 +132,7 @@ function Header() {
               <Tippy content="Inbox" placement="bottom">
                 <button className={cx("action-btn")}>
                   <InboxIcon />
+                  <span className={cx("badge")}>12</span>
                 </button>
               </Tippy>
             </>

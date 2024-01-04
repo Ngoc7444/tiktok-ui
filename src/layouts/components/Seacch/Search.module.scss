@@ -19,6 +19,7 @@
     font-size: 1.6rem;
     background-color: transparent;
     caret-color: var(--primary);
+    font-family: var(--font-family);
   }
 
   input:not(:placeholder-shown) ~ .search-btn {
@@ -61,7 +62,7 @@
 }
 
 @keyframes spinner {
-  from{
+  from {
     transform: translateY(-50%) rotate(0);
   }
   to {
