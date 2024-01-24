@@ -29,28 +29,28 @@ function Search() {
 
   const [searchResult, setSearchResult] = useState([]);
 
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef();
 
-  const debounced = useDebounce(searchValue, 500);
+  const debouncedValue = useDebounce(searchValue, 500);
 
   useEffect(() => {
-    if (!debounced.trim()) {
+    if (!debouncedValue.trim()) {
       setSearchResult([]);
       return;
     }
 
     const fetchAPI = async () => {
       setLoading(true);
-      const result = await searchServices.search(debounced);
+      const result = await searchServices.search(debouncedValue);
       setSearchResult(result);
       setLoading(false);
     };
     fetchAPI();
-  }, [debounced]);
+  }, [debouncedValue]);
 
   const handleClear = () => {
     setSearchValue("");
